@@ -1,0 +1,25 @@
+{
+      "@type": "ExternalNetworkProfile",
+      "name": "Accept my Sacrifice",
+      "description": "If my live demo works I will sacrifice a chicken a day until VMworld 2017.",
+      "isHidden": false,
+      "definedRanges": [
+        {
+          "name": "VMworld Network Range",
+          "description": "",
+          "beginIPv4Address": "192.168.130.200",
+          "endIPv4Address": "192.168.130.250",
+          "state": "UNALLOCATED",
+          "definedAddresses": null
+        }
+      ],
+      "profileType": "EXTERNAL",
+      "subnetMask": "255.255.255.0",
+      "gatewayAddress": "192.168.130.1",
+      "primaryDnsAddress": "192.168.130.10",
+      "secondaryDnsAddress": "",
+      "dnsSuffix": "corp.local",
+      "dnsSearchSuffix": "",
+      "primaryWinsAddress": "",
+      "secondaryWinsAddress": ""
+}

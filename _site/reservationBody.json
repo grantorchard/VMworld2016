@@ -1,0 +1,242 @@
+{
+  "name" : "Cluster Site A-Res-1",
+  "reservationTypeId" : "Infrastructure.Reservation.Virtual.vSphere",
+  "tenantId" : "vsphere.local",
+  "subTenantId" : "5327ddd3-1a4e-4663-9e9d-63db86ffc8af",
+  "enabled" : true,
+  "priority" : 1,
+  "reservationPolicyId" : "518a78f0-3fcb-4c71-b601-48d5ba5c687b",
+  "alertPolicy" : {
+    "enabled" : false,
+    "frequencyReminder" : 0,
+    "emailBgMgr" : true,
+    "recipients" : [],
+    "alerts" : [
+      {
+        "alertPercentLevel" : 80,
+        "referenceResourceId" : "storage"
+      },
+      {
+        "alertPercentLevel" : 80,
+        "referenceResourceId" : "memory"
+      },
+      {
+        "alertPercentLevel" : 80,
+        "referenceResourceId" : "cpu"
+      },
+      {
+        "alertPercentLevel" : 80,
+        "referenceResourceId" : "machine"
+      }
+    ]
+  },
+  "extensionData" : {
+    "entries" : [
+      {
+        "key" : "vCNSTransportZone",
+        "value" : {
+          "type" : "entityRef",
+          "componentId" : null,
+          "classId" : "NetworkScope",
+          "id" : "1",
+          "label" : "Global_Transport_Zone"
+        }
+      },
+      {
+        "key" : "reservationMemory",
+        "value" : {
+          "type" : "complex",
+          "componentTypeId" : "com.vmware.csp.iaas.blueprint.service",
+          "componentId" : null,
+          "classId" : "Infrastructure.Reservation.Memory",
+          "typeFilter" : null,
+          "values" : {
+            "entries" : [
+              {
+                "key" : "memoryReservedSizeMb",
+                "value" : {
+                  "type" : "integer",
+                  "value" : 8192
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "key" : "reservationStorages",
+        "value" : {
+          "type" : "multiple",
+          "elementTypeId" : "COMPLEX",
+          "items" : [
+            {
+              "type" : "complex",
+              "componentTypeId" : "com.vmware.csp.iaas.blueprint.service",
+              "componentId" : null,
+              "classId" : "Infrastructure.Reservation.Storage",
+              "typeFilter" : null,
+              "values" : {
+                "entries" : [
+                  {
+                    "key" : "storageReservedSizeGB",
+                    "value" : {
+                      "type" : "integer",
+                      "value" : 32
+                    }
+                  },
+                  {
+                    "key" : "storageReservationPriority",
+                    "value" : {
+                      "type" : "integer",
+                      "value" : 1
+                    }
+                  },
+                  {
+                    "key" : "storagePath",
+                    "value" : {
+                      "type" : "entityRef",
+                      "componentId" : null,
+                      "classId" : "Storage",
+                      "id" : "f978305a-80fe-4b4c-bd3b-76964f709165",
+                      "label" : "ds-site-a-nfs01"
+                    }
+                  },
+                  {
+                    "key" : "storageEnabled",
+                    "value" : {
+                      "type" : "boolean",
+                      "value" : true
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "key" : "vCNSSecurityGroups",
+        "value" : {
+          "type" : "multiple",
+          "elementTypeId" : "ENTITY_REFERENCE",
+          "items" : [
+            {
+              "type" : "entityRef",
+              "componentId" : null,
+              "classId" : "VCNSSecurityGroup",
+              "id" : "4",
+              "label" : "SG-Dev-Default"
+            }
+          ]
+        }
+      },
+      {
+        "key" : "machineQuota",
+        "value" : {
+          "type" : "integer",
+          "value" : 0
+        }
+      },
+      {
+        "key" : "computeResource",
+        "value" : {
+          "type" : "entityRef",
+          "componentId" : null,
+          "classId" : "ComputeResource",
+          "id" : "8f0e4c3e-f8d2-4ecb-aabb-fb1b484b5ba9",
+          "label" : "Cluster Site A (vCenter)"
+        }
+      },
+      {
+        "key" : "vCNSRoutedGateways",
+        "value" : {
+          "type" : "multiple",
+          "elementTypeId" : "COMPLEX",
+          "items" : [
+            {
+              "type" : "complex",
+              "componentTypeId" : "com.vmware.csp.iaas.blueprint.service",
+              "componentId" : null,
+              "classId" : "Infrastructure.Reservation.Virtual.vSphere.VCNSRoutedGateway",
+              "typeFilter" : null,
+              "values" : {
+                "entries" : [
+                  {
+                    "key" : "vCNSNetworkProfile",
+                    "value" : {
+                      "type" : "entityRef",
+                      "componentId" : null,
+                      "classId" : "NetworkInterface",
+                      "id" : "2847e0f2-739d-48e2-adee-49cd0910343f",
+                      "label" : "External Network DLR"
+                    }
+                  },
+                  {
+                    "key" : "vCNSNetworkPath",
+                    "value" : {
+                      "type" : "entityRef",
+                      "componentId" : null,
+                      "classId" : "NetworkInterface",
+                      "id" : "3",
+                      "label" : "Transit Network"
+                    }
+                  },
+                  {
+                    "key" : "vCNSEdge",
+                    "value" : {
+                      "type" : "entityRef",
+                      "componentId" : null,
+                      "classId" : "Edge",
+                      "id" : "2",
+                      "label" : "NSX DLR"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "key" : "reservationNetworks",
+        "value" : {
+          "type" : "multiple",
+          "elementTypeId" : "COMPLEX",
+          "items" : [
+            {
+              "type" : "complex",
+              "componentTypeId" : "com.vmware.csp.iaas.blueprint.service",
+              "componentId" : null,
+              "classId" : "Infrastructure.Reservation.Network",
+              "typeFilter" : null,
+              "values" : {
+                "entries" : [
+                  {
+                    "key" : "networkPath",
+                    "value" : {
+                      "type" : "entityRef",
+                      "componentId" : null,
+                      "classId" : "Network",
+                      "id" : "3ac9ef5f-02de-4a61-a2cb-788736366b0b",
+                      "label" : "vxw-dvs-35-virtualwire-3-sid-5001-Transit Network"
+                    }
+                  },
+                  {
+                    "key" : "networkProfile",
+                    "value" : {
+                      "type" : "entityRef",
+                      "componentId" : null,
+                      "classId" : "NetworkProfile",
+                      "id" : "2847e0f2-739d-48e2-adee-49cd0910343f",
+                      "label" : "External Network DLR"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
