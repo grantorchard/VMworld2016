@@ -1,4 +1,4 @@
-name,description,managerDomain,managerName,consumerDomain,consumerName,supportDomain,supportUser,emailTo,adContainer
+name,description,managerDomain,managerName,consumerDomain,consumerName,supportDomain,supportName,emailTo,adContainer
 Business Group 001,,lab.local,user000999,lab.local,group001,,,user000999@lab.local,
 Business Group 002,,lab.local,user001999,lab.local,group002,,,user001999@lab.local,
 Business Group 003,,lab.local,user002999,lab.local,group003,,,user002999@lab.local,
