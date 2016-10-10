@@ -9,8 +9,8 @@ vraHostname = 'vra-01a.corp.local'
 headers = {'Content-Type' : 'application/json; charset=utf-8', 'Accept' : 'application/json'}
 
 def doEntireThing():
-    #global auth_headers
-    #auth_headers = tokenForUsername(user)
+    global auth_headers
+    auth_headers = tokenForUsername(user)
     newBgsfromCsv = newBgsFromCsv()
 
 def tokenForUsername(user):
@@ -38,7 +38,10 @@ def newBgsFromCsv():
             body['subtenantRoles'][0]['principalId'][0]['name']=row['managerName']
             body['subtenantRoles'][1]['principalId'][0]['domain']=row['consumerDomain']
             body['subtenantRoles'][1]['principalId'][0]['name']=row['consumerName']
-            body['extensionData']['entries'][0]['value']=row['emailTo']
+            #body['subtenantRoles'][2]['principalId'][0]['domain']=row['supportDomain']
+            #body['subtenantRoles'][2]['principalId'][0]['name']=row['supportName']
+            body['extensionData']['entries'][0]['value']['value']=row['emailTo']
+    #print body
             #body['primaryWinsAddress']=row['adContainer']
             req = requests.post(url, headers = auth_headers, verify = False, data=json.dumps(body))
             print req.status_code
